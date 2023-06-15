@@ -1,0 +1,19 @@
+{
+    // "sqltools.connections": [
+    //     {
+    //         "mysqlOptions": {
+    //             "authProtocol": "xprotocol"
+    //         },
+    //         "previewLimit": 50,
+    //         "server": "localhost",
+    //         "port": 3306,
+    //         "driver": "MySQL",
+    //         "name": "localhost_root_conn",
+    //         "database": "travel_agency_db",
+    //         "username": "root",
+    //         "password": "0000",
+    //         "connectionTimeout": 28800
+    //     }
+    // ],
+    // "python.analysis.typeCheckingMode": "off"
+}
