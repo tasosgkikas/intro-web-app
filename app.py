@@ -15,10 +15,21 @@ def connection():
 
 
 def wrong_input() -> list[tuple]:
+    """
+    Returns 'Wrong input!' in the appropriate type 
+    so as to be rendered in the browser.
+    """
     return [('Wrong input!',)]
 
 
 def table_with_column_names(dicts_list: list[dict]) -> list[tuple]:
+    """Converts the given list of dicts to a renderable table.
+    
+    Takes as argument a list of dicts, all having the same keys.
+    Returns a list of tuples, the 1st of which has the keys as values,
+    and i-th tuple has the values of the (i-1)-th dict as values.
+    This way the data can be rendered by the website.py to the browser.
+    """
     if not dicts_list:
         raise ValueError("Empty list as argument. Expected a non-empty list.")
     
@@ -33,6 +44,14 @@ def table_with_column_names(dicts_list: list[dict]) -> list[tuple]:
     
 
 def  findTrips(x,a,b):
+    """Returns a set of information for each trip that matches the parameters.
+    
+    Parameters:
+        x : branch_id
+        a : trip starting date for search
+        b : trip ending date for search
+    """
+
     # Creating a DictCursor on a new connection.
     cursor = connection().cursor(cursor = pymysql.cursors.DictCursor)
 
@@ -162,6 +181,10 @@ def  findTrips(x,a,b):
 
 
 def findRevenue(x):
+    """Returns a set of information for each branch, in order given by the parameter.
+    
+    Parameter x : either 'asc' for ascending order, or 'desc' for descending order
+    """
     # Creating a DictCursor on a new connection.
     cursor = connection().cursor(cursor = pymysql.cursors.DictCursor)
 
@@ -215,6 +238,8 @@ def findRevenue(x):
 
 
 def bestClient(x):
+    """Returns a set of information for the client with the highest revenue."""
+
     # Creating a DictCursor on a new connection.
     cursor = connection().cursor(cursor = pymysql.cursors.DictCursor)
 
@@ -291,6 +316,8 @@ def bestClient(x):
     
 
 def giveAway(N):
+    """Randomly picks N clients and gifts each one a trip."""
+    
     # Creating a DictCursor on a new connection.
     db = connection()
     cursor = db.cursor(cursor = pymysql.cursors.DictCursor)
